@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value to match your navbar's height + a little extra space */
 }
 
 body {
@@ -125,10 +126,6 @@ h6 {
 .navbar-dynamic.scrolled {
   background-color: #212529 !important; /* Bootstrap's $dark color */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.navbar-dynamic.navbar-hidden {
-  transform: translateY(-100%);
 }
 
 .footer-link {

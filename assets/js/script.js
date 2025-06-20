@@ -103,29 +103,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Dynamic Navbar on Scroll
+// Custom JS for the project
+
 document.addEventListener('DOMContentLoaded', function () {
-    let lastScrollTop = 0;
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+        duration: 800, // Animation duration in milliseconds
+        once: true,    // Whether animation should happen only once
+        offset: 120,   // Offset (in px) from the original trigger point
+    });
+
+    // Auto-close mobile navbar on link click
+    const navItems = document.querySelectorAll('#navbarNav .nav-link, #navbarNav .btn');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navCollapse = document.querySelector('#navbarNav');
+
+    navItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            if (navCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Dynamic Navbar on Scroll
     const navbar = document.querySelector('.navbar-dynamic');
-    const navbarHeight = navbar.offsetHeight;
 
     window.addEventListener('scroll', function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Only apply hide/show effect on screens wider than 992px (the 'lg' breakpoint)
-        if (window.innerWidth >= 992) {
-            if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
-                // Scroll Down
-                navbar.classList.add('navbar-hidden');
-            } else {
-                // Scroll Up
-                navbar.classList.remove('navbar-hidden');
-            }
-        } else {
-            // On mobile, always ensure the navbar is visible
-            navbar.classList.remove('navbar-hidden');
-        }
-
+        // Add scrolled class and switch themes after scrolling a bit
         if (scrollTop > 10) {
             navbar.classList.add('scrolled');
             navbar.classList.remove('navbar-light');
@@ -135,8 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
             navbar.classList.remove('navbar-dark');
             navbar.classList.add('navbar-light');
         }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, false);
 });
 
