@@ -1,61 +1,192 @@
+@use "sass:color";
+
+html {
+  scroll-behavior: smooth;
+}
+
 // Custom SCSS for Bootstrap 5.3.7 Project
 // Compile this to assets/css/custom.css if you want to use SCSS
 
+// Font Family - Montserrat as default
+$font-family-base: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-headings: "Lora", serif;
+
+// Apply Montserrat as default font
+body {
+  font-family: $font-family-base;
+  font-weight: 400;
+  color: #495057; // Softer, more professional body text color
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-headings;
+  font-weight: 700;
+}
+
 // Variables
-$primary-color: #8b5cf6;
+$primary-color: #f97316; // Orange
 $secondary-color: #64748b;
 $success-color: #22c55e;
 $warning-color: #f59e0b;
 $danger-color: #ef4444;
 
 // Mixins
-@mixin button-hover($color) {
-    &:hover {
-        background-color: darken($color, 10%);
-        border-color: darken($color, 10%);
-    }
+@mixin button-hover($color, $text-color) {
+  &:hover {
+    background-color: color.adjust($color, $lightness: -10%);
+    border-color: color.adjust($color, $lightness: -10%);
+    color: $text-color;
+  }
+}
+
+// Testimonial Quote
+.testimonial-quote {
+  &::before {
+    content: "“";
+    position: absolute;
+    top: -0.3em;
+    left: 0;
+    font-size: 5rem;
+    font-family: serif;
+    color: rgba(0, 0, 0, 0.05);
+    line-height: 1;
+    z-index: 0;
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Testimonial Card for bottom section
+.testimonial-card {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .08);
+  }
+}
+
+.testimonial-quote-icon {
+  position: absolute;
+  top: -0.5em;
+  left: 0;
+  font-size: 5rem;
+  font-family: serif;
+  color: rgba(0, 0, 0, 0.05);
+  line-height: 1;
+  z-index: 1;
+}
+
+.testimonial-card h4,
+.testimonial-card p,
+.testimonial-card .d-flex {
+  position: relative;
+  z-index: 1;
+}
+
+// Trusted By Section
+.company-logo {
+  max-height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
 }
 
 // Custom button styles
-.btn-custom {
-    background-color: $primary-color;
-    border-color: $primary-color;
-    color: white;
-    
-    @include button-hover($primary-color);
+.btn-plan {
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out;
+  @include button-hover($primary-color, #ffffff);
 }
 
-// Custom card styles
-.custom-card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
+// Hero Section
+.hero-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 56px; /* For fixed-top navbar */
+  background-color: #ffffff;
+}
+
+// Stats Section
+.stats-section {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+// Trusted By Section
+.trusted-section {
+  background-color: #f8f9fa;
+  padding: 3rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+// Dynamic Navbar Styles
+.navbar-dynamic {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.navbar-dynamic.scrolled {
+  background-color: #212529 !important; /* Bootstrap's $dark color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.navbar-dynamic.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+// Footer
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.nav-link {
+  &.active {
+    font-weight: 700;
+  }
+}
+
+// Feature Item Hover Effect
+.feature-item-hover {
+    transition: transform 0.3s ease;
     &:hover {
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        transform: scale(1.03);
     }
 }
-
-// Custom form styles
-.custom-form {
-    .form-control {
-        border-radius: 8px;
-        border: 2px solid #e2e8f0;
-        
-        &:focus {
-            border-color: $primary-color;
-            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
-        }
-    }
-}
-
-// Responsive utilities
-@media (max-width: 576px) {
-    .mobile-padding {
-        padding: 1rem !important;
-    }
-    
-    .mobile-text-center {
-        text-align: center !important;
-    }
-} 

@@ -1,66 +1,154 @@
-/* Custom Styles for Bootstrap 5.3.7 Project */
-
-/* Primary button text color fix */
-.btn-primary {
-    color: white !important;
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom colors */
-:root {
-    --bs-primary: #8b5cf6;  /* Purple */
-    --bs-primary-rgb: 139, 92, 246;
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  color: #495057;
+  line-height: 1.6;
 }
 
-/* Custom navbar styling */
-.navbar-brand {
-    font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+  font-weight: 700;
 }
 
-/* Hero section enhancements */
-.bg-primary {
-    background: linear-gradient(135deg, var(--bs-primary), #a855f7) !important;
+.testimonial-quote::before {
+  content: "“";
+  position: absolute;
+  top: -0.3em;
+  left: 0;
+  font-size: 5rem;
+  font-family: serif;
+  color: rgba(0, 0, 0, 0.05);
+  line-height: 1;
+  z-index: 0;
+}
+.testimonial-quote p {
+  position: relative;
+  z-index: 1;
 }
 
-/* Card hover effects */
-.card {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+.testimonial-card {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.testimonial-quote-icon {
+  position: absolute;
+  top: -0.5em;
+  left: 0;
+  font-size: 5rem;
+  font-family: serif;
+  color: rgba(0, 0, 0, 0.05);
+  line-height: 1;
+  z-index: 1;
 }
 
-/* Form styling */
-.form-control:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+.testimonial-card h4,
+.testimonial-card p,
+.testimonial-card .d-flex {
+  position: relative;
+  z-index: 1;
 }
 
-/* Button styling */
-.btn {
-    border-radius: 8px;
-    font-weight: 500;
+.company-logo {
+  max-height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.company-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
-.btn-primary {
-    background: var(--bs-primary);
-    border-color: var(--bs-primary);
+.btn-plan {
+  background-color: #f97316 !important;
+  border-color: #f97316 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out;
+}
+.btn-plan:hover {
+  background-color: rgb(214.4769874477, 91.129707113, 5.5230125523);
+  border-color: rgb(214.4769874477, 91.129707113, 5.5230125523);
+  color: #ffffff;
 }
 
-.btn-primary:hover {
-    background: #7c3aed;
-    border-color: #7c3aed;
+.hero-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 56px; /* For fixed-top navbar */
+  background-color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .display-4 {
-        font-size: 2.5rem;
-    }
-    
-    .py-5 {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-    }
-} 
+.stats-section {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.trusted-section {
+  background-color: #f8f9fa;
+  padding: 3rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.navbar-dynamic {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.navbar-dynamic.scrolled {
+  background-color: #212529 !important; /* Bootstrap's $dark color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.navbar-dynamic.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.feature-item-hover {
+  transition: transform 0.3s ease;
+}
+.feature-item-hover:hover {
+  transform: scale(1.03);
+}
+
+/*# sourceMappingURL=custom.css.map */

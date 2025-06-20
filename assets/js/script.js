@@ -2,6 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+        duration: 800, // Animation duration in milliseconds
+        once: true,    // Whether animation should happen only once
+        offset: 120,   // Offset (in px) from the original trigger point
+    });
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
@@ -94,4 +101,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl);
     });
+});
+
+// Dynamic Navbar on Scroll
+document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar-dynamic');
+    const navbarHeight = navbar.offsetHeight;
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Only apply hide/show effect on screens wider than 992px (the 'lg' breakpoint)
+        if (window.innerWidth >= 992) {
+            if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+                // Scroll Down
+                navbar.classList.add('navbar-hidden');
+            } else {
+                // Scroll Up
+                navbar.classList.remove('navbar-hidden');
+            }
+        } else {
+            // On mobile, always ensure the navbar is visible
+            navbar.classList.remove('navbar-hidden');
+        }
+
+        if (scrollTop > 10) {
+            navbar.classList.add('scrolled');
+            navbar.classList.remove('navbar-light');
+            navbar.classList.add('navbar-dark');
+        } else {
+            navbar.classList.remove('scrolled');
+            navbar.classList.remove('navbar-dark');
+            navbar.classList.add('navbar-light');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+});
+
+// Optionally, re-activate scrollspy on page load (for dynamic content)
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navbarNav',
+    offset: 80
 }); 
