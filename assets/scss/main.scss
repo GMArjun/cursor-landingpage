@@ -1,0 +1,87 @@
+// 1. IMPORT BOOTSTRAP
+// To get this to work, download the Bootstrap 5.3.7 source files
+// and place the 'scss' folder as 'bootstrap' in this directory.
+// See /assets/scss/bootstrap/README.md for instructions.
+@import "bootstrap/bootstrap";
+
+// 2. IMPORT CUSTOM PARTIALS
+// Your custom variables, components, and layout styles.
+@import "variables";
+@import "components";
+@import "layout";
+
+// 3. ADDITIONAL CUSTOM STYLES
+// You can add more styles here or create new partial files.
+// Example: @import "custom-page";
+
+// Custom variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$info-color: #17a2b8;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+// Custom styles
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.15s ease-in-out;
+    
+    &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+}
+
+.btn {
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+    
+    &:hover {
+        transform: translateY(-1px);
+    }
+}
+
+.form-control {
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    
+    &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+}
+
+// Section styles
+section {
+    padding: 4rem 0;
+    
+    h2 {
+        color: $dark-color;
+        margin-bottom: 2rem;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+} 
