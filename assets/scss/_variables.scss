@@ -1,15 +1,231 @@
-// Bootstrap 5.3.7 Variables Override
-// Custom color variables
-$primary: #007bff;
-$secondary: #6c757d;
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #343a40;
+@use "sass:color";
+// Bootstrap 5.3.7 Variables Override - Complete Color Customization
+// ==============================================================
 
-// Custom spacing
+// 1. CORE THEME COLORS (Most Important)
+// ======================================
+$primary: #8b5cf6;  // Purple color
+$secondary: #64748b;
+$success: #22c55e;
+$info: #06b6d4;
+$warning: #f59e0b;
+$danger: #ef4444;
+$light: #f1f5f9;
+$dark: #0f172a;
+
+// 2. BASE COLORS (Individual Colors)
+// ==================================
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+// 3. GRAY SCALE (10 shades)
+// =========================
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// 4. BODY & TEXT COLORS
+// =====================
+$body-color: $gray-900;
+$body-bg: $white;
+$body-secondary-color: rgba($body-color, .75);
+$body-secondary-bg: $gray-200;
+$body-tertiary-color: rgba($body-color, .5);
+$body-tertiary-bg: $gray-100;
+$body-emphasis-color: $black;
+
+// 5. LINK COLORS
+// ==============
+$link-color: $primary;
+$link-hover-color: color.adjust($link-color, $lightness: -10%);
+$link-decoration: underline;
+
+// 6. BORDER COLORS
+// ================
+$border-color: $gray-300;
+$border-color-translucent: rgba($black, .175);
+$border-width: 1px;
+$border-style: solid;
+
+// 7. SHADOW COLORS
+// ================
+$box-shadow: 0 .5rem 1rem rgba($black, .15);
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, .075);
+
+// 8. FOCUS RING COLORS
+// ====================
+$focus-ring-width: .25rem;
+$focus-ring-opacity: .25;
+$focus-ring-color: rgba($primary, $focus-ring-opacity);
+$focus-ring-blur: 0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+
+// 9. COMPONENT COLORS
+// ===================
+$component-active-color: $white;
+$component-active-bg: $primary;
+
+// 10. CARD COLORS
+// ===============
+$card-bg: $body-bg;
+$card-border-color: $border-color-translucent;
+$card-cap-bg: rgba($body-color, .03);
+$card-color: null;
+$card-border-width: $border-width;
+$card-border-radius: 0.375rem;
+
+// 11. NAVBAR COLORS
+// =================
+// Light navbar
+$navbar-light-color: rgba($body-emphasis-color, .65);
+$navbar-light-hover-color: rgba($body-emphasis-color, .8);
+$navbar-light-active-color: rgba($body-emphasis-color, 1);
+$navbar-light-brand-color: $navbar-light-active-color;
+$navbar-light-disabled-color: rgba($body-emphasis-color, .3);
+
+// Dark navbar
+$navbar-dark-color: rgba($white, .55);
+$navbar-dark-hover-color: rgba($white, .75);
+$navbar-dark-active-color: $white;
+$navbar-dark-brand-color: $navbar-dark-active-color;
+$navbar-dark-disabled-color: rgba($white, .25);
+
+// 12. BUTTON COLORS
+// =================
+$btn-color: $body-color;
+$btn-disabled-opacity: .65;
+
+// 13. DROPDOWN COLORS
+// ===================
+$dropdown-bg: $body-bg;
+$dropdown-color: $body-color;
+$dropdown-border-color: $border-color-translucent;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $dropdown-link-color;
+$dropdown-link-hover-bg: $body-tertiary-bg;
+$dropdown-link-active-color: $component-active-color;
+$dropdown-link-active-bg: $component-active-bg;
+
+// 14. PAGINATION COLORS
+// =====================
+$pagination-color: $link-color;
+$pagination-bg: $body-bg;
+$pagination-border-color: $border-color;
+$pagination-hover-color: $link-hover-color;
+$pagination-hover-bg: $body-tertiary-bg;
+$pagination-active-color: $component-active-color;
+$pagination-active-bg: $component-active-bg;
+
+// 15. ACCORDION COLORS
+// ====================
+$accordion-color: $body-color;
+$accordion-bg: $body-bg;
+$accordion-border-color: $border-color;
+
+// 16. ALERT COLORS
+// ================
+$alert-bg-scale: -80%;
+$alert-border-scale: -70%;
+$alert-color-scale: 40%;
+
+// 17. PROGRESS COLORS
+// ===================
+$progress-bg: $body-secondary-bg;
+$progress-bar-color: $white;
+
+// 18. LIST GROUP COLORS
+// =====================
+$list-group-color: $body-color;
+$list-group-bg: $body-bg;
+$list-group-border-color: $border-color;
+$list-group-hover-bg: $body-tertiary-bg;
+$list-group-active-color: $component-active-color;
+$list-group-active-bg: $component-active-bg;
+
+// 19. MODAL COLORS
+// ================
+$modal-content-bg: $body-bg;
+$modal-content-border-color: $border-color-translucent;
+$modal-header-border-color: $border-color;
+$modal-footer-border-color: $border-color;
+
+// 20. TOOLTIP COLORS
+// ==================
+$tooltip-color: $white;
+$tooltip-bg: $black;
+
+// 21. POPOVER COLORS
+// ==================
+$popover-bg: $body-bg;
+$popover-border-color: $border-color-translucent;
+$popover-header-bg: $body-secondary-bg;
+$popover-header-color: $body-color;
+
+// 22. TOAST COLORS
+// ================
+$toast-color: $body-color;
+$toast-bg: $body-bg;
+$toast-border-color: $border-color-translucent;
+$toast-header-color: $body-secondary-color;
+$toast-header-bg: $body-secondary-bg;
+$toast-header-border-color: $border-color-translucent;
+
+// 23. BADGE COLORS
+// ================
+$badge-color: $white;
+
+// 24. SPINNER COLORS
+// ==================
+$spinner-width: 2rem;
+$spinner-height: $spinner-width;
+$spinner-border-width: .25em;
+
+// 25. CLOSE BUTTON COLORS
+// =======================
+$btn-close-color: $black;
+
+// 26. OFFCANVAS COLORS
+// ====================
+$offcanvas-bg-color: $body-bg;
+$offcanvas-color: $body-color;
+$offcanvas-border-color: $border-color-translucent;
+
+// 27. PLACEHOLDER COLORS
+// ======================
+$placeholder-opacity-max: .5;
+$placeholder-opacity-min: .2;
+
+// 28. FIGURE COLORS
+// =================
+$figure-caption-color: $body-secondary-color;
+
+// 29. CODE COLORS
+// ===============
+$code-color: $pink;
+$kbd-color: $white;
+$kbd-bg: $gray-900;
+$pre-color: null;
+
+// CUSTOM SPACING (Keep your existing spacing)
+// ===========================================
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -22,17 +238,18 @@ $spacers: (
   7: $spacer * 5,
 );
 
-// Typography
+// TYPOGRAPHY (Keep your existing typography)
+// ==========================================
 $font-family-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.6;
 
-// Border radius
+// BORDER RADIUS (Keep your existing border radius)
+// ================================================
 $border-radius: 0.375rem;
 $border-radius-sm: 0.25rem;
 $border-radius-lg: 0.5rem;
 
-// Shadows
-$box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-$box-shadow-lg: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+// ==============================================================
+// END OF VARIABLES - All Bootstrap colors can now be customized!
+// ============================================================== 

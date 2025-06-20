@@ -6,10 +6,6 @@
 ```bash
 # Install Sass globally
 npm install -g sass
-
-# Or install locally in your project
-npm init -y
-npm install sass --save-dev
 ```
 
 ### Compile SCSS
@@ -20,53 +16,17 @@ sass assets/scss/main.scss assets/css/style.css
 # Watch for changes (auto-compile)
 sass --watch assets/scss/main.scss assets/css/style.css
 
-# Compressed output
+# Compressed output (optional)
 sass --style=compressed assets/scss/main.scss assets/css/style.css
 ```
 
-## Method 2: Using Node.js Scripts
-
-### Add to package.json
-```json
-{
-  "scripts": {
-    "sass": "sass assets/scss/main.scss assets/css/style.css",
-    "sass:watch": "sass --watch assets/scss/main.scss assets/css/style.css",
-    "sass:compressed": "sass --style=compressed assets/scss/main.scss assets/css/style.css"
-  },
-  "devDependencies": {
-    "sass": "^1.69.0"
-  }
-}
-```
-
-### Run scripts
-```bash
-npm run sass        # Compile once
-npm run sass:watch  # Watch for changes
-npm run sass:compressed  # Compressed output
-```
-
-## Method 3: Using VS Code Extension
+## Method 2: Using VS Code Extension
 
 1. Install "Live Sass Compiler" extension
-2. Open VS Code settings
-3. Add configuration:
-```json
-{
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/assets/css"
-    }
-  ],
-  "liveSassCompile.settings.autoprefix": true
-}
-```
-4. Click "Watch Sass" in VS Code status bar
+2. Click "Watch Sass" in the status bar
+3. Edit SCSS files and see changes instantly
 
-## Method 4: Using Online Compiler
+## Method 3: Using Online Compiler
 
 1. Go to https://www.sassmeister.com/
 2. Paste your SCSS code
@@ -81,25 +41,14 @@ assets/scss/
 ├── _variables.scss    # Variables and overrides
 ├── _components.scss   # Component styles
 ├── _layout.scss       # Layout and responsive
-└── _utilities.scss    # Utility classes (optional)
+└── bootstrap/         # Bootstrap SCSS source files
 ```
 
 ## Bootstrap SCSS Setup
 
-### Option A: Using npm (Recommended)
-```bash
-npm install bootstrap@5.3.7
-```
-
-Then update `main.scss`:
-```scss
-@import "../node_modules/bootstrap/scss/bootstrap";
-```
-
-### Option B: Manual Download
-1. Download Bootstrap SCSS from: https://github.com/twbs/bootstrap/tree/main/scss
-2. Place in `assets/scss/bootstrap/` folder
-3. Update import in `main.scss`:
+1. Download Bootstrap SCSS from: https://getbootstrap.com/docs/5.3/getting-started/download/
+2. Place the `scss` folder as `assets/scss/bootstrap/`
+3. Your `main.scss` should start with:
 ```scss
 @import "bootstrap/bootstrap";
 ```
