@@ -81,28 +81,30 @@ h6 {
 }
 
 .btn-plan {
-  background-color: #f97316 !important;
-  border-color: #f97316 !important;
+  background-color: #f8954f !important;
+  border-color: #f8954f !important;
   color: #ffffff !important;
   transition: all 0.3s ease-in-out;
   font-weight: 500;
+  border-radius: 14px;
 }
 .btn-plan:hover {
-  background-color: rgb(214.4769874477, 91.129707113, 5.5230125523) !important;
-  border-color: rgb(214.4769874477, 91.129707113, 5.5230125523) !important;
+  background-color: rgb(246.0491803279, 119.4590163934, 29.9508196721) !important;
+  border-color: rgb(246.0491803279, 119.4590163934, 29.9508196721) !important;
   color: #ffffff !important;
 }
 
 .btn-login {
-  background-color: #22c55e !important;
-  border-color: #22c55e !important;
+  background-color: #64748b !important;
+  border-color: #64748b !important;
   color: #ffffff !important;
   transition: all 0.3s ease-in-out;
   font-weight: 500;
+  border-radius: 14px;
 }
 .btn-login:hover {
-  background-color: rgb(26.4935064935, 153.5064935065, 73.2467532468) !important;
-  border-color: rgb(26.4935064935, 153.5064935065, 73.2467532468) !important;
+  background-color: rgb(78.6610878661, 91.2468619247, 109.3389121339) !important;
+  border-color: rgb(78.6610878661, 91.2468619247, 109.3389121339) !important;
   color: #ffffff !important;
 }
 

@@ -34,7 +34,7 @@ h6 {
 }
 
 // Variables
-$primary-color: #f97316; // Orange
+$primary-color: #f8954f; // Orange
 $secondary-color: #64748b;
 $success-color: #22c55e;
 $warning-color: #f59e0b;
@@ -123,15 +123,17 @@ $danger-color: #ef4444;
   transition: all 0.3s ease-in-out;
   @include button-hover($primary-color, #ffffff);
   font-weight: 500;
+  border-radius: 14px;
 }
 
 .btn-login {
-  background-color: $success-color !important;
-  border-color: $success-color !important;
+  background-color: $secondary-color !important;
+  border-color: $secondary-color !important;
   color: #ffffff !important;
   transition: all 0.3s ease-in-out;
-  @include button-hover($success-color, #ffffff);
+  @include button-hover($secondary-color, #ffffff);
   font-weight: 500;
+  border-radius: 14px;
 }
 
 // Hero Section
