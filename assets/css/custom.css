@@ -1,0 +1,66 @@
+/* Custom Styles for Bootstrap 5.3.7 Project */
+
+/* Primary button text color fix */
+.btn-primary {
+    color: white !important;
+}
+
+/* Custom colors */
+:root {
+    --bs-primary: #8b5cf6;  /* Purple */
+    --bs-primary-rgb: 139, 92, 246;
+}
+
+/* Custom navbar styling */
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Hero section enhancements */
+.bg-primary {
+    background: linear-gradient(135deg, var(--bs-primary), #a855f7) !important;
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+/* Button styling */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+} 

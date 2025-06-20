@@ -1,0 +1,61 @@
+// Custom SCSS for Bootstrap 5.3.7 Project
+// Compile this to assets/css/custom.css if you want to use SCSS
+
+// Variables
+$primary-color: #8b5cf6;
+$secondary-color: #64748b;
+$success-color: #22c55e;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+
+// Mixins
+@mixin button-hover($color) {
+    &:hover {
+        background-color: darken($color, 10%);
+        border-color: darken($color, 10%);
+    }
+}
+
+// Custom button styles
+.btn-custom {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    
+    @include button-hover($primary-color);
+}
+
+// Custom card styles
+.custom-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+// Custom form styles
+.custom-form {
+    .form-control {
+        border-radius: 8px;
+        border: 2px solid #e2e8f0;
+        
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+        }
+    }
+}
+
+// Responsive utilities
+@media (max-width: 576px) {
+    .mobile-padding {
+        padding: 1rem !important;
+    }
+    
+    .mobile-text-center {
+        text-align: center !important;
+    }
+} 
