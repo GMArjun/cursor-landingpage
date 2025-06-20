@@ -1,7 +1,8 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 74px; /* Adjust this value to match your navbar's height + a little extra space */
+  scroll-padding-top: 78px;
+  overflow-x: hidden;
 }
 
 body {
@@ -87,9 +88,22 @@ h6 {
   font-weight: 500;
 }
 .btn-plan:hover {
-  background-color: rgb(214.4769874477, 91.129707113, 5.5230125523);
-  border-color: rgb(214.4769874477, 91.129707113, 5.5230125523);
-  color: #ffffff;
+  background-color: rgb(214.4769874477, 91.129707113, 5.5230125523) !important;
+  border-color: rgb(214.4769874477, 91.129707113, 5.5230125523) !important;
+  color: #ffffff !important;
+}
+
+.btn-login {
+  background-color: #22c55e !important;
+  border-color: #22c55e !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+.btn-login:hover {
+  background-color: rgb(26.4935064935, 153.5064935065, 73.2467532468) !important;
+  border-color: rgb(26.4935064935, 153.5064935065, 73.2467532468) !important;
+  color: #ffffff !important;
 }
 
 .hero-section {
